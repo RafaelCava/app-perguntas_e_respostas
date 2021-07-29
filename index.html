@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perguntas e repostas</title>
 </head>
+
 <body>
   <div class="title">
     <h1>Qual o melhor site de programação</h1>
@@ -26,82 +28,83 @@
         <br />
       </div>
     </form>
-  <div class="title">
-    <h1>Qual o melhor site de programação</h1>
-    <form action="" class="pergunta">
-      <div class="resposta">
-        <span>Opção 1</span>
-        <input type="radio" name="pergunta2" value="correta" />
-        <br />
+    <div class="title">
+      <h1>Qual o melhor site de programação</h1>
+      <form action="" class="pergunta">
+        <div class="resposta">
+          <span>Opção 1</span>
+          <input type="radio" name="pergunta2" value="correta" />
+          <br />
+        </div>
+        <div class="resposta">
+          <span>Opção 2</span>
+          <input type="radio" name="pergunta2" value="incorreta" />
+          <br />
+        </div>
+        <div class="resposta">
+          <span>Opção 3</span>
+          <input type="radio" name="pergunta2" value="incorreta" />
+          <br />
+        </div>
+      </form>
+      <div class="title">
+        <h1>Qual o melhor site de programação</h1>
+        <form action="" class="pergunta">
+          <div class="resposta">
+            <span>Opção 1</span>
+            <input type="radio" name="pergunta3" value="correta" />
+            <br />
+          </div>
+          <div class="resposta">
+            <span>Opção 2</span>
+            <input type="radio" name="pergunta3" value="incorreta" />
+            <br />
+          </div>
+          <div class="resposta">
+            <span>Opção 3</span>
+            <input type="radio" name="pergunta3" value="incorreta" />
+            <br />
+          </div>
+        </form>
+        <button>Finalizar</button>
       </div>
-      <div class="resposta">
-        <span>Opção 2</span>
-        <input type="radio" name="pergunta2" value="incorreta" />
-        <br />
-      </div>
-      <div class="resposta">
-        <span>Opção 3</span>
-        <input type="radio" name="pergunta2" value="incorreta" />
-        <br />
-      </div>
-    </form>
-  <div class="title">
-    <h1>Qual o melhor site de programação</h1>
-    <form action="" class="pergunta">
-      <div class="resposta">
-        <span>Opção 1</span>
-        <input type="radio" name="pergunta3" value="correta" />
-        <br />
-      </div>
-      <div class="resposta">
-        <span>Opção 2</span>
-        <input type="radio" name="pergunta3" value="incorreta" />
-        <br />
-      </div>
-      <div class="resposta">
-        <span>Opção 3</span>
-        <input type="radio" name="pergunta3" value="incorreta" />
-        <br />
-      </div>
-    </form>
-    <button>Finalizar</button>
-  </div>
-  <script>
-    let elementos = document.querySelectorAll("[type=radio")
-    let botao = document.querySelector('button')
-    let correta = 0
-    let incorreta = 0
-    elementos.forEach(val=>{
-      val.addEventListener('click', (event)=>{
-        if(val.value === 'correta' && val.checked === true){
-          correta++
-          let parentNode = event.target.parentNode
-          parentNode.style.backgroundColor = "green"
-        }else{
-          incorreta++
-          let parentNode = event.target.parentNode
-          parentNode.style.backgroundColor = "red"
-        }
-      })
-    })
+      <script>
+        let elementos = document.querySelectorAll("[type=radio")
+        let botao = document.querySelector('button')
+        let correta = 0
+        let incorreta = 0
+        elementos.forEach(val => {
+          val.addEventListener('click', (event) => {
+            if (val.value === 'correta' && val.checked === true) {
+              correta++
+              let parentNode = event.target.parentNode
+              parentNode.style.backgroundColor = "green"
+            } else {
+              incorreta++
+              let parentNode = event.target.parentNode
+              parentNode.style.backgroundColor = "red"
+            }
+          })
+        })
 
-    function apagarSelect(){
-      elementos.forEach(val=>{
-        val.checked = false
-        val.parentNode.style.backgroundColor = '#fff'
-        correta = 0
-        incorreta = 0
-    })
-    }
-    
-    botao.addEventListener('click', (event)=>{
-      alert(`
+        function apagarSelect() {
+          elementos.forEach(val => {
+            val.checked = false
+            val.parentNode.style.backgroundColor = '#fff'
+            correta = 0
+            incorreta = 0
+          })
+        }
+
+        botao.addEventListener('click', (event) => {
+          alert(`
       Acertou ${correta} questões
       Errou ${incorreta} questões
       `)
-      apagarSelect()
-    })
+          apagarSelect()
+        })
 
-  </script>
+      </script>
 </body>
+
 </html>
