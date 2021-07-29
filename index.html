@@ -10,46 +10,98 @@
   <div class="title">
     <h1>Qual o melhor site de programação</h1>
     <form action="" class="pergunta">
-      <span>Opção 1</span>
-      <input type="radio" name="pergunta1" value="correta" />
-      <br />
-      <span>Opção 2</span>
-      <input type="radio" name="pergunta1" value="incorreta" />
-      <br />
-      <span>Opção 3</span>
-      <input type="radio" name="pergunta1" value="incorreta" />
-      <br />
+      <div class="resposta">
+        <span>Opção 1</span>
+        <input type="radio" name="pergunta1" value="correta" />
+        <br />
+      </div>
+      <div class="resposta">
+        <span>Opção 2</span>
+        <input type="radio" name="pergunta1" value="incorreta" />
+        <br />
+      </div>
+      <div class="resposta">
+        <span>Opção 3</span>
+        <input type="radio" name="pergunta1" value="incorreta" />
+        <br />
+      </div>
     </form>
-  </div>
-  
   <div class="title">
     <h1>Qual o melhor site de programação</h1>
     <form action="" class="pergunta">
-      <span>Opção 1</span>
-      <input type="radio" name="pergunta1" value="correta" />
-      <br />
-      <span>Opção 2</span>
-      <input type="radio" name="pergunta1" value="incorreta" />
-      <br />
-      <span>Opção 3</span>
-      <input type="radio" name="pergunta1" value="incorreta" />
-      <br />
+      <div class="resposta">
+        <span>Opção 1</span>
+        <input type="radio" name="pergunta2" value="correta" />
+        <br />
+      </div>
+      <div class="resposta">
+        <span>Opção 2</span>
+        <input type="radio" name="pergunta2" value="incorreta" />
+        <br />
+      </div>
+      <div class="resposta">
+        <span>Opção 3</span>
+        <input type="radio" name="pergunta2" value="incorreta" />
+        <br />
+      </div>
     </form>
+  <div class="title">
+    <h1>Qual o melhor site de programação</h1>
+    <form action="" class="pergunta">
+      <div class="resposta">
+        <span>Opção 1</span>
+        <input type="radio" name="pergunta3" value="correta" />
+        <br />
+      </div>
+      <div class="resposta">
+        <span>Opção 2</span>
+        <input type="radio" name="pergunta3" value="incorreta" />
+        <br />
+      </div>
+      <div class="resposta">
+        <span>Opção 3</span>
+        <input type="radio" name="pergunta3" value="incorreta" />
+        <br />
+      </div>
+    </form>
+    <button>Finalizar</button>
   </div>
+  <script>
+    let elementos = document.querySelectorAll("[type=radio")
+    let botao = document.querySelector('button')
+    let correta = 0
+    let incorreta = 0
+    elementos.forEach(val=>{
+      val.addEventListener('click', (event)=>{
+        if(val.value === 'correta' && val.checked === true){
+          correta++
+          let parentNode = event.target.parentNode
+          parentNode.style.backgroundColor = "green"
+        }else{
+          incorreta++
+          let parentNode = event.target.parentNode
+          parentNode.style.backgroundColor = "red"
+        }
+      })
+    })
 
-  <div class="title">
-    <h1>Qual o melhor site de programação</h1>
-    <form action="" class="pergunta">
-      <span>Opção 1</span>
-      <input type="radio" name="pergunta1" value="correta" />
-      <br />
-      <span>Opção 2</span>
-      <input type="radio" name="pergunta1" value="incorreta" />
-      <br />
-      <span>Opção 3</span>
-      <input type="radio" name="pergunta1" value="incorreta" />
-      <br />
-    </form>
-  </div>
+    function apagarSelect(){
+      elementos.forEach(val=>{
+        val.checked = false
+        val.parentNode.style.backgroundColor = '#fff'
+        correta = 0
+        incorreta = 0
+    })
+    }
+    
+    botao.addEventListener('click', (event)=>{
+      alert(`
+      Acertou ${correta} questões
+      Errou ${incorreta} questões
+      `)
+      apagarSelect()
+    })
+
+  </script>
 </body>
 </html>
